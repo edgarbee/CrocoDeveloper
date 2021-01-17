@@ -57,7 +57,9 @@
             $c++;
 
             foreach ($row as $cell){
-            
+            if ($c==4){
+                    $cell = date('d-m-Y', strtotime($cell));
+                }
                 $sheet->setCellValueByColumnAndRow($c,$r,$cell);
                 $c++;
             }
