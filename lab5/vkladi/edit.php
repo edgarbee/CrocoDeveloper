@@ -30,8 +30,8 @@
                 print "  Дата приобретения: <input name='date' size='50' placeholder='dd-mm-yyyy' type='date' value='$date'>";
 
                 
-                $result = $mysqli->query("SELECT id, name FROM dep_prog WHERE id=$dep_id");
-                echo "<br>Деп: <select name='dep_id'>";
+                $result = $mysqli->query("SELECT id, name FROM dep_prog");
+                echo "<br>Программа депозитов: <select name='id_dep'>";
 
                 if ($result){
                     while ($row = $result->fetch_array()){
@@ -48,6 +48,6 @@
             ?>
             <p><input type='submit' name='save' value='Сохранить'></p>
         </form>
-        <p><button style='color: blue' onclick="window.location.href='cont.php'">Вернуться к списку программ депозитов</button></td></p>
+        <p><button style='color: blue' onclick="window.location.href='vkladi.php'">Вернуться к списку программ депозитов</button></td></p>
     </body>
 </html>
