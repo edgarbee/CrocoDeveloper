@@ -1,28 +1,24 @@
 <?php
-mb_internal_encoding("UTF-8");
-$text = $_POST["userTEXT"];
-$len_text = mb_strlen($text);
-$sign = $_POST["char"];
 
-$count_char = 0; //подсчет количества символов в тексте
+$text = $_POST["upper"];
 
-$l = array($len_text);
-echo $text;
-echo "<br/>";
-echo "Порядкое номера символа " . $sign . " в тексте: ";
+$pattern = '/^[a-z0-9]+$/i';
 
-	for ($i=0; $i < $len_text; $i++) { 
-		$l[$i] = mb_substr($text,$i,1);
-		if ($l[$i] == $sign) {
-		$count_char = $count_char + 1;
-		echo $i . " ";
-	} 
-	}	
 
-	
-	echo "<br/>";
-echo "<br/>";
-echo "Количество символа " . $sign . " - "  . $count_char;
+$A=[];
+$len = mb_strlen($text);
+for ($i=0; $i < $len; $i++) {
+    $A[$i]=mb_substr($text, $i, 1);
+  }
+
+for ($i=0; $i < $len; $i++) {
+    if(preg_match($pattern, $A[$i])){
+    echo mb_strtoupper($A[$i]);
+    }
+    else {
+        echo $A[$i];
+    }
+  }
 
 
  ?>
