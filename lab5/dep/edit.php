@@ -3,7 +3,7 @@
     <body>
         <form action='save_edit.php' method='get'>
             <?php
-            $mysqli = new mysqli("localhost","edgar","1234","edgar");
+            $mysqli = new mysqli("localhost","f0505640_edgar","1234","f0505640_edgar");
                 if ($mysqli->connect_errno) {
                     echo "Не удалось подключиться к БД";
                 }
@@ -30,7 +30,7 @@
                 print "Название программы: <input name='name' size='50' type='text' value='$name'>";
 
 
-                $result = $mysqli->query("SELECT id, name FROM banks WHERE id=$bank_id");
+                $result = $mysqli->query("SELECT id, name FROM banks");
                 echo "<br>Банк: <select name='bank_id'>";
 
                 if ($result){
