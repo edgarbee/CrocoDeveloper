@@ -4,50 +4,32 @@
 	<title>Razyapov Edgar</title>
 </head>
 <body>
-	<img src="1.png">
+	<h1>Вариант 8</h1>
 <?php
-echo '<br/>';
+    function F($u, $t){
+        if ($u >= 0 && $t >= 0){
+            return $u - 2*$t;
+        }
+        else if($u < 0 && $t >= 0){
+            return $u + $t;
+        }
+        else if($u >= 0 && $t < 0){
+            return $u*$u -2*$t;
+        }
+        else if($u < 0 && $t < 0){
+            return $u*$t +3*$t;
+        }
+    }
 
-$a = rand(-20,20);
-$b = rand(-20,20);
+    $a = rand(-10, 10);
+    $b = rand(-10, 10);
 
-echo 'Первое число: ' . $a . '<br/>';
-echo 'Второе число: ' . $b;
+    echo "<p> Аргумент A = ".$a;
+    echo "<p> Аргумент B = ".$b;
 
-// первая часть третьего условия
-$t3 =$a-1;
-$F = array(3);
+    $z = F($a, $b * $b - $a) + F($a,$b);
 
-for ($i=0; $i < 3; $i++) {
-	//1
-if ($t3 > 0 && $b > 0) {
-	$F[$i] = $t3*$t3 + $b*$b;
-} elseif ($a > 0 && $b >0) {
-	$F[$i] = $a*$a + $b*$b;
-}
-	//2
-if ($t3<=0 && $b <= 0) {
-		$F[$i] = $t3 + $b*$b;
-	} elseif ($a <= 0 && $b <=0) {
-	$F[$i] = $a + $b*$b;
-}
-	//3
-if ($t3>0 && $b <= 0) {
-		$F[$i] = $t3 - $b;
-	} elseif ($a > 0 && $b <=0) {
-	$F[$i] = $a - $b;
-}
-	//4
-if ($t3 <= 0 && $b > 0) {
-		$F[$i] = $t3 + $b;
-	} elseif ($a <= 0 && $b >0) {
-	$F[$i] = $t3 + $b;
-}
-}
-$z = $F[0] + $F[1]+$F[2]; // Сумма функций
-
-echo '<br/>' . 'Сумма функций равна: ' . $z;
-
+    echo "<p> Результат = ".$z;
 ?>
 </body>
 </html>
