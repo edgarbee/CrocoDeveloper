@@ -1,27 +1,12 @@
 <title>Razyapov Edgar</title>
-<h1>Вариант 3</h1>
+<h1>Вариант 8</h1>
 <?php
-    $A=[];
 
-    $count=rand(1,20);
-
-    echo "Исходный массив: ";
-    for ($i=0; $i < $count; $i++) {
-      $A[$i]=rand(10,100);
-      echo $A[$i].' ';
-    }
-    $K=$A[0];
-    echo "<br>";
-    echo 'K= '.$K;
-    echo "<br>";
-
-    echo "Скорректированный массив: ";
-    for ($i=0; $i < $count; $i++) {
-      if ($A[$i]<$K) {
-        $A[$i]=$K;
-      }
-      echo $A[$i].' ';
-    }
-
+$inarray = array(rand(1,10), rand(1,10), rand(1,10), rand(1,10), rand(1,10), rand(1,10), rand(1,10), rand(1,10), rand(1,10));
+print_r ($inarray);
+$tmp = array_count_values($inarray);
+$max = max($tmp);
+$result = array_search( $max, $tmp); 
+echo '<br>Самый повторяющийся элемент массива: ', $result, '. Он повторяется ', $max, ' раз(а).';
 
  ?>
