@@ -1,33 +1,20 @@
 <title>Razyapov Edgar</title>
-<h1>Вариант 14</h1>
+<h1>Вариант 13</h1>
 <?php
   $A=[];
-  $count=rand(1,20);
-  $c1=rand(1,25);
-  $c2=rand(26,50);
+  $count=rand(5,10);
+  
 
   echo "Исходный массив: ";
   for ($i=0; $i < $count; $i++) {
-    $A[$i]=rand(10,100)/2;
+    $A[$i]=rand(-10,10);
     echo $A[$i].' | ';
   }
-  echo '<br>';
-  echo "Интервал: [".$c1." ;".$c2."]";
-  echo '<br>';
-  $min=$A[0];
+  $sum = 0;
   for ($i=0; $i < $count; $i++) {
-    if ($min>$A[$i]) {
-      $min=$A[$i];
-    }
+      if ($A[$i] < 0 && $A[$i]%2 ){
+          $sum=$sum + $A[$i];
+      }
   }
-  echo "Минимальное значение массива: ". $min;
-  echo '<br>';
-  echo "Cкорректированный массив: ";
-  for ($i=0; $i < $count; $i++) {
-    if ($A[$i]>$c1 and $A[$i]<$c2) {
-      $A[$i]=$min;
-    }
-    echo $A[$i].' | ';
-  }
-
+  echo "<br>Сумма " . $sum;
  ?>
