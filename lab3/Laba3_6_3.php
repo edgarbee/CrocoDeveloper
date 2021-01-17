@@ -4,9 +4,9 @@
 <H1>Вариант 24</H1>
 <H3>Каждое предложение должно заканчиваться точкой</H3>
   <FORM action="<?php print $PHP_SELF ?>" method="post">
-    <p>Предложение: <INPUT type="text" name="predl1" maxlength="50"></p>
-    <p>a: <INPUT type="text" name="a" maxlength="50"></p>
-    <p>b: <INPUT type="text" name="b" maxlength="50"></p>
+    <p>Предложение: <INPUT type="text" name="predl1" ></p>
+    <p>a: <INPUT type="text" name="a"></p>
+    <p>b: <INPUT type="text" name="b"></p>
     <p><INPUT type="submit" name="check" value="Проверить"></p>
 
     </FORM>
